@@ -18,4 +18,7 @@ node {
          }
       }
    }
+   stage('Docker Image'){
+	sh 'docker build -t www .'
+   }
 }
