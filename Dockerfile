@@ -7,8 +7,8 @@ RUN apt-get update && \
   apt-get install -y \
     net-tools \
     tree \
-    vim && \
-    apt-get clean && apt-get purge
+    vim
+RUN apt-get clean
 
 RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv.sh
 COPY target/wwp-1.0.0.war /usr/local/tomcat/webapps/wwp-1.0.0.war
